@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "db": "mysql -u root -p < ./database/data/schema.sql",
     "db-nopassword": "mysql -u root < ./database/data/schema.sql",
-    "build": "webpack -w",
+    "build": "webpack",
     "start": "nodemon ./server/index.js localhost 3020",
     "seed-database": "node database/seed.js"
   },

@@ -10,15 +10,15 @@ const seedData = () => {
       length: 183,
       timestamp: 0,
       isliked: Math.floor(Math.random() * 2),
-      songFile: 'https://sound-clout.s3-us-west-1.amazonaws.com/Fleas.mp3',
+      songFile: 'Shelter.mp3',
       title: faker.random.words(),
       artist: faker.name.findName(),
       album: faker.commerce.productName(),
       thumbnail: faker.image.imageUrl(),
     };
-    const sampleSong = exampleSongs[i] || randomSong;
-    schema.songSaverAsync(sampleSong)
-      // .then((results) => schema.playlistSaverAsync(results.insertId, 'upNext'))
+    // const sampleSong = exampleSongs[i] || randomSong;
+    schema
+      .songSaverAsync(randomSong)
       .then((results) => console.log('upNextGeneratorAsync result', results))
       .catch((err) => console.log('upNextGeneratorAsync err', err));
   }

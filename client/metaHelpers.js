@@ -3,7 +3,8 @@ import axios from 'axios';
 const metaHelpers = {
   // Current Player song will always be the first song in the next up playlist
   mount() {
-    axios.get('http://ec2-54-193-53-101.us-west-1.compute.amazonaws.com/songs')
+    axios
+      .get('http://localhost:3000/songs')
       .then((results) => {
         // 1) Get all the songs as the default playlist
         const songs = results.data;
@@ -21,7 +22,7 @@ const metaHelpers = {
       .catch((err) => console.log('mount err: ', err));
   },
   tick(songfile) {
-    const { songs, upNext, repeat, songFile } = this.state;
+    const {songs, upNext, repeat, songFile} = this.state;
     // If the song has ended
     //   1) clear the interval,
     //   2) repeat song if necessary,
@@ -32,7 +33,7 @@ const metaHelpers = {
       clearInterval(this.timestampID);
       if (repeat === 'Song') {
         songFile.currentTime = 0;
-        this.setState({ timestamp: 0 });
+        this.setState({timestamp: 0});
       } else if (songs.length > 0 || upNext.length > 0) {
         this.next();
       } else if (repeat === 'List') {
@@ -42,11 +43,11 @@ const metaHelpers = {
     } else {
       // Tick is called each second when playing,
       //   storing the currentTime property from the Audio element
-      this.setState({ timestamp: songFile.currentTime });
+      this.setState({timestamp: songFile.currentTime});
     }
   },
   shuffle() {
-    const { shuffle } = this.state;
+    const {shuffle} = this.state;
     let newStatus;
     //  check shuffle state and rotate between '' and '-alt', where '' references the default classname
     if (shuffle === '') {
@@ -54,10 +55,10 @@ const metaHelpers = {
     } else {
       newStatus = '';
     }
-    this.setState({ shuffle: newStatus });
+    this.setState({shuffle: newStatus});
   },
   repeat() {
-    const { repeat } = this.state;
+    const {repeat} = this.state;
     let newStatus;
     //  check repeat state and rotate between: '' to 'List' to 'Song' back to ''
     if (repeat === '') {
@@ -67,12 +68,13 @@ const metaHelpers = {
     } else {
       newStatus = '';
     }
-    this.setState({ repeat: newStatus });
+    this.setState({repeat: newStatus});
   },
   like(songId, isLiked) {
-    const { upNext } = this.state;
-    //  Post to the "http://ec2-54-193-53-101.us-west-1.compute.amazonaws.com/like:songId" route to toggle like status
-    axios.post(`http://ec2-54-193-53-101.us-west-1.compute.amazonaws.com/like/${songId}`, { isliked: isLiked })
+    const {upNext} = this.state;
+    //  Post to the "http://localhost/like:songId" route to toggle like status
+    axios
+      .post(`http://localhost/like/${songId}`, {isliked: isLiked})
       .then(() => axios.get('/songs'))
       .then((results) => {
         const songs = results.data;
@@ -81,7 +83,7 @@ const metaHelpers = {
           const likeStatus = upNext[0].isliked;
           upNext[0].isliked = likeStatus ? 0 : 1;
         }
-        return this.setState({ upNext, songs: results.data });
+        return this.setState({upNext, songs: results.data});
       })
       .catch((err) => console.log('like err', err));
   },

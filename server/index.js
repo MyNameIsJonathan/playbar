@@ -5,7 +5,7 @@ var cors = require('cors')
 const cb = require('./routeCallbacks');
 
 const app = express();
-const port = 3020;
+const port = 3000;
 
 const jsonParser = bodyParser.json();
 

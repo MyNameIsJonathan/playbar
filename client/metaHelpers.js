@@ -72,9 +72,9 @@ const metaHelpers = {
   },
   like(songId, isLiked) {
     const {upNext} = this.state;
-    //  Post to the "http://localhost/like:songId" route to toggle like status
+    //  Post to the "http://localhost:3000/like:songId" route to toggle like status
     axios
-      .post(`http://localhost/like/${songId}`, {isliked: isLiked})
+      .post(`http://localhost:3000/like/${songId}`, {isliked: isLiked})
       .then(() => axios.get('/songs'))
       .then((results) => {
         const songs = results.data;

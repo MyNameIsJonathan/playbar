@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-var cors = require('cors')
+const cors = require('cors');
 const cb = require('./routeCallbacks');
 
 const app = express();
@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/songs/:id', cb.getSong);
 
+// A query to http://localhost:3000/songs queries 'songs' table
 app.get('/:playlist', cb.getPlaylist);
 
 app.post('/like/:songId', jsonParser, cb.likeEntry);

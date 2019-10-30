@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import axios from 'axios';
 
 const metaHelpers = {
@@ -13,7 +14,7 @@ const metaHelpers = {
         upNext.push(songs.shift());
         // 3) When setting state, make a songFile out of upNext[0]
         // 4) Set state: songs, upNext, songFile
-        return this.setState({
+        this.setState({
           songs,
           upNext,
           songFile: new Audio(upNext[0].songFile),
@@ -75,24 +76,14 @@ const metaHelpers = {
     //  Post to the "http://localhost:3000/like:songId" route to toggle like status
     axios
       .post(`http://localhost:3000/like/${songId}`, {isliked: isLiked})
-      .then(() => axios.get('/songs'))
-      .then((results) => {
-        const songs = results.data;
-        // if songId is current player song, toggle isliked to re-render "like" status
-        if (songId === upNext[0].songId) {
-          const likeStatus = upNext[0].isliked;
-          upNext[0].isliked = likeStatus ? 0 : 1;
-        }
-        return this.setState({upNext, songs: results.data});
+      .then(() => {
+        this.setState((state) => {
+          state.upNext[0].isliked = state.upNext[0].isliked ? 0 : 1;
+          return {upNext};
+        });
       })
       .catch((err) => console.log('like err', err));
   },
-  //  *IF TIME REFACTOR:
-  //  *Get nextUp songIds, use Promise.each to:
-  //    *use '/songs/:id' to get the song obj
-  //    *then push result to upNext arr
-  //    *When all promises complete: setState with upNext
-  //  *Do the same for previousPlays^
 };
 
 export default metaHelpers;

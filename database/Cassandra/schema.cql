@@ -49,4 +49,4 @@ INSERT INTO songs (
       'myUsername'
       );
 
-select * from songs;
+select * from songs WHERE songId = 1;

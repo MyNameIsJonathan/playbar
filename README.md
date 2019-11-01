@@ -62,9 +62,20 @@ Update a song record in the database. Data should be sent as a JSON object in th
 
 Removes a song record from the database, and removes any comment records related to the song.
 
-### POST /likes/
+### GET /likes/:song_id/:user_id
 
-Get comments for a song. The response returns a JSON array of objects.
+Update like for a song. The response returns a SUCCESS/FAILURE string.
+
+**Parameters**
+
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| `song_id` | `integer` | _Required_. Identifier for the song. |
+| `user_id` | `integer` | _Required_. Identifier for the user liking the song. |
+
+### PUT /likes/:song_id/:user_id
+
+Update like for a song. The response is a boolean true/false.
 
 **Parameters**
 

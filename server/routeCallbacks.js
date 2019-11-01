@@ -33,7 +33,7 @@ module.exports = {
   },
   likeEntry: (req, res) => {
     schema
-      .likeUpdaterAsync(req.params.song_id, req.body.is_liked)
+      .likeUpdaterAsync(req.params.songId, req.body.is_liked)
       .then((results) => res.status(200).send(results))
       .catch((err) => res.status(404).send(err));
   },

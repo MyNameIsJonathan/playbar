@@ -30,7 +30,7 @@ class UpNext extends React.Component {
 }
 
 // UpNext.propTypes = {
-//   song_id: PropTypes.number.isRequired,
+//   songId: PropTypes.number.isRequired,
 //   is_liked: PropTypes.number.isRequired,
 //   like: PropTypes.func.isRequired,
 // };

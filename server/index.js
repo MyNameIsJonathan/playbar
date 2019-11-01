@@ -19,16 +19,11 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-// A query to http://localhost:3000/songs queries 'songs' table
-app.get('/:playlist', cb.getPlaylist);
-
-app.post('/playlist/:playlist', jsonParser, cb.playlistEntry);
-
 // Update like status
-app.post('/likes/:song_id', jsonParser, cb.likeEntry);
+app.post('/likes/:songId', jsonParser, cb.likeEntry); // TODO add user_id
 
 // CREATE SONG
-app.post('/songs/:song_name', cb.postSong);
+app.post('/songs/:songName', cb.postSong);
 
 // GET SONG
 app.get('/songs/:id', cb.getSong);

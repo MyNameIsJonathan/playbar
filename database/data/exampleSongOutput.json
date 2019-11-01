@@ -1,182 +1,182 @@
 [
   {
     "id": 1,
-    "song_id": 109,
+    "songId": 109,
     "length": 183,
     "time_stamp": 2,
     "is_liked": 0,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Armenian Dram Administrator card",
     "artist": "Giovani Deckow",
     "album": "Ergonomic Metal Salad",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 2,
-    "song_id": 1694,
+    "songId": 1694,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "interface",
     "artist": "Lyric Mohr II",
     "album": "Generic Plastic Table",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 3,
-    "song_id": 234,
+    "songId": 234,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Liaison Utah",
     "artist": "Helga Wehner",
     "album": "Tasty Fresh Car",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 4,
-    "song_id": 1276,
+    "songId": 1276,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Facilitator",
     "artist": "Hiram Nitzsche",
     "album": "Rustic Fresh Sausages",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 5,
-    "song_id": 355,
+    "songId": 355,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Suriname client-server",
     "artist": "Hilton Koelpin",
     "album": "Practical Metal Chicken",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 6,
-    "song_id": 163,
+    "songId": 163,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Decentralized virtual",
     "artist": "Keven Dickinson",
     "album": "Fantastic Fresh Computer",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 7,
-    "song_id": 1721,
+    "songId": 1721,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Oklahoma input",
     "artist": "Jett Schuppe",
     "album": "Intelligent Wooden Bacon",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 8,
-    "song_id": 152,
+    "songId": 152,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Berkshire",
     "artist": "Kaya Marvin III",
     "album": "Refined Wooden Sausages",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 9,
-    "song_id": 461,
+    "songId": 461,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "Colorado",
     "artist": "Camilla Rohan",
     "album": "Incredible Frozen Mouse",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 10,
-    "song_id": 713,
+    "songId": 713,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "mesh",
     "artist": "Madie Haag",
     "album": "Unbranded Concrete Ball",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 11,
-    "song_id": 902,
+    "songId": 902,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "uniform circuit",
     "artist": "Jaquan Reichel",
     "album": "Incredible Rubber Soap",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 12,
-    "song_id": 579,
+    "songId": 579,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "SAS Hawaii",
     "artist": "Mossie Bartell",
     "album": "Handcrafted Rubber Fish",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 13,
-    "song_id": 559,
+    "songId": 559,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "out-of-the-box orchestrate Guarani",
     "artist": "Mr. Peter Greenholt",
     "album": "Refined Wooden Table",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 14,
-    "song_id": 1950,
+    "songId": 1950,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "deposit Integration",
     "artist": "Miss Zita Dickens",
     "album": "Practical Steel Chair",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   },
   {
     "id": 15,
-    "song_id": 1623,
+    "songId": 1623,
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_data_url": "Shelter.mp3",
+    "songDataURL": "Shelter.mp3",
     "title": "SDD",
     "artist": "Emmanuelle Swift",
     "album": "Sleek Plastic Bacon",
-    "thumbnail_url": "http://lorempixel.com/640/480"
+    "thumbnailURL": "http://lorempixel.com/640/480"
   }
 ]

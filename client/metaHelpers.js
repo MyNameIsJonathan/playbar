@@ -12,39 +12,39 @@ const metaHelpers = {
         // 2) Splice out first song and push to upNext playlist
         const upNext = [];
         upNext.push(songs.shift());
-        // 3) When setting state, make a song_data_url out of upNext[0]
-        // 4) Set state: songs, upNext, song_data_url
+        // 3) When setting state, make a songDataURL out of upNext[0]
+        // 4) Set state: songs, upNext, songDataURL
         this.setState({
           songs,
           upNext,
-          song_data_url: new Audio(upNext[0].song_data_url),
+          songDataURL: new Audio(upNext[0].songDataURL),
         });
       })
       .catch((err) => console.log('mount err: ', err));
   },
-  tick(song_data_url) {
-    const {songs, upNext, repeat, song_data_url} = this.state;
+  tick(songDataURL) {
+    const {songs, upNext, repeat, songDataURL} = this.state;
     // If the song has ended
     //   1) clear the interval,
     //   2) repeat song if necessary,
     //   3) call next if possible,
     //   4) if repeating all AND at the end, restart with previousPlays
-    const isEnded = song_data_url.ended;
+    const isEnded = songDataURL.ended;
     if (isEnded) {
       clearInterval(this.time_stampID);
       if (repeat === 'Song') {
-        song_data_url.currentTime = 0;
+        songDataURL.currentTime = 0;
         this.setState({time_stamp: 0});
       } else if (songs.length > 0 || upNext.length > 0) {
         this.next();
       } else if (repeat === 'List') {
-        // mount makes a request for the songList, and resets state for songs, upNext, and song_data_url
+        // mount makes a request for the songList, and resets state for songs, upNext, and songDataURL
         this.mount();
       }
     } else {
       // Tick is called each second when playing,
       //   storing the currentTime property from the Audio element
-      this.setState({time_stamp: song_data_url.currentTime});
+      this.setState({time_stamp: songDataURL.currentTime});
     }
   },
   shuffle() {
@@ -71,11 +71,11 @@ const metaHelpers = {
     }
     this.setState({repeat: newStatus});
   },
-  like(song_id, is_liked) {
+  like(songId, is_liked) {
     const {upNext} = this.state;
-    //  Post to the "http://localhost:3000/likes:song_id" route to toggle like status
+    //  Post to the "http://localhost:3000/likes:songId" route to toggle like status
     axios
-      .post(`http://localhost:3000/likes/${song_id}`, {is_liked: is_liked})
+      .post(`http://localhost:3000/likes/${songId}`, {is_liked: is_liked})
       .then(() => {
         this.setState((state) => {
           state.upNext[0].is_liked = state.upNext[0].is_liked ? 0 : 1;

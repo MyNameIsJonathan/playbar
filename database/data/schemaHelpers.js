@@ -3,56 +3,56 @@ const db = require('../index');
 
 module.exports = Promise.promisifyAll({
   songSaver: (song, cb) => {
-    const stmt = `INSERT INTO songs (song_id, length, time_stamp, is_liked, song_data_url, title, artist, album, thumbnail_url) 
+    const stmt = `INSERT INTO songs (songId, length, time_stamp, is_liked, songDataURL, title, artist, album, thumbnailURL) 
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
               `;
     const songVals = [
-      song.song_id,
+      song.songId,
       song.length,
       song.time_stamp,
       song.is_liked,
-      song.song_data_url,
+      song.songDataURL,
       song.title,
       song.artist,
       song.album,
-      song.thumbnail_url,
+      song.thumbnailURL,
     ];
     db.queryAsync(stmt, songVals)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-  playlistSaver: (song_id, playlist, cb) => {
-    const stmt = `INSERT INTO ${playlist} (song_id) 
+  playlistSaver: (songId, playlist, cb) => {
+    const stmt = `INSERT INTO ${playlist} (songId) 
                VALUES (?)
               `;
-    db.queryAsync(stmt, song_id)
+    db.queryAsync(stmt, songId)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-  songGetter: (song_id, cb) => {
+  songGetter: (songId, cb) => {
     const stmt = 'SELECT * FROM songs WHERE id = ?';
-    db.queryAsync(stmt, song_id)
+    db.queryAsync(stmt, songId)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
   // TODO COMPLETE -- AFTER CHOOSING DB
-  songPoster: (song_id, cb) => {
+  songPoster: (songId, cb) => {
     const stmt = 'SELECT * FROM songs WHERE id = ?';
-    db.queryAsync(stmt, song_id)
+    db.queryAsync(stmt, songId)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
   // TODO COMPLETE -- AFTER CHOOSING DB
-  songPutter: (song_id, updatedVals, cb) => {
+  songPutter: (songId, updatedVals, cb) => {
     const stmt = db.query('UPDATE songs SET ? WHERE id = ?');
-    db.queryAsync(stmt, [updatedVals, song_id])
+    db.queryAsync(stmt, [updatedVals, songId])
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
   // TODO COMPLETE -- AFTER CHOOSING DB
-  songDeleter: (song_id, cb) => {
+  songDeleter: (songId, cb) => {
     const stmt = 'DELETE * FROM songs WHERE id = ?';
-    db.queryAsync(stmt, song_id)
+    db.queryAsync(stmt, songId)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
@@ -62,10 +62,10 @@ module.exports = Promise.promisifyAll({
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-  likeUpdater: (song_id, like, cb) => {
+  likeUpdater: (songId, like, cb) => {
     const newStatus = like ? 0 : 1;
     const stmt = `UPDATE songs SET is_liked = ${newStatus}
-                  WHERE song_id = ${song_id}
+                  WHERE songId = ${songId}
                   `;
     db.queryAsync(stmt)
       .then((results) => cb(null, results))

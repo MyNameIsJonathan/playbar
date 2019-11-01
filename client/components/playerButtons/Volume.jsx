@@ -5,17 +5,17 @@ import styles from '../../cssModules/button.css'
 class Volume extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { volume: props.songFile.volume, isMuted: false };
+    this.state = { volume: props.song_file.volume, isMuted: false };
     this.muteToggle = this.muteToggle.bind(this);
   }
 
   muteToggle() {
     const { volume, isMuted } = this.state;
-    const { songFile } = this.props;
+    const { song_file } = this.props;
     if (isMuted) {
-      songFile.volume = volume;
+      song_file.volume = volume;
     } else {
-      songFile.volume = 0;
+      song_file.volume = 0;
     }
     this.setState({ isMuted: !isMuted });
   }
@@ -37,7 +37,7 @@ class Volume extends React.Component {
 }
 
 Volume.propTypes = {
-  songFile: PropTypes.shape({
+  song_file: PropTypes.shape({
     volume: PropTypes.number.isRequired,
   }).isRequired,
 };

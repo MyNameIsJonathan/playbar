@@ -4,19 +4,19 @@ import Like from './Like';
 import UpNext from './UpNext';
 import styles from '../../cssModules/infobar.css'
 
-function MetaData({ songId, isLiked, like }) {
+function MetaData({ song_id, is_liked, like }) {
 
   return (
     <div className={styles.metaDataGrid}>
-      <Like songId={songId} isLiked={isLiked} like={like} />
+      <Like song_id={song_id} is_liked={is_liked} like={like} />
       <UpNext />
     </div>
   );
 }
 
 MetaData.propTypes = {
-  songId: PropTypes.number.isRequired,
-  isLiked: PropTypes.number.isRequired,
+  song_id: PropTypes.number.isRequired,
+  is_liked: PropTypes.number.isRequired,
   like: PropTypes.func.isRequired,
 };
 

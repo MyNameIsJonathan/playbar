@@ -7,7 +7,7 @@ import Remaining from './LengthRemainingToggle';
 class Player extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isScrubbing: false, scrubTimestampLocation: 0 };
+    this.state = { isScrubbing: false, scrubtime_stampLocation: 0 };
     this.startScrubbing = this.startScrubbing.bind(this);
     this.endScrubbing = this.endScrubbing.bind(this);
     this.scrubTimeline = this.scrubTimeline.bind(this);
@@ -17,30 +17,30 @@ class Player extends React.Component {
 
   endScrubbing() {this.setState( {isScrubbing: false })}
 
-  scrubTimeline(scrubTimestampLocation) { 
+  scrubTimeline(scrubtime_stampLocation) { 
     const { isScrubbing } = this.state;
     if(isScrubbing) {
-      this.setState({ scrubTimestampLocation });
+      this.setState({ scrubtime_stampLocation });
     }
   }
   
   render() {
-    const { length, timestamp, scrub } = this.props;
-    const { isScrubbing, scrubTimestampLocation } = this.state;
-    const timelineTimestamp = (isScrubbing) ? scrubTimestampLocation : timestamp;
+    const { length, time_stamp, scrub } = this.props;
+    const { isScrubbing, scrubtime_stampLocation } = this.state;
+    const timelinetime_stamp = (isScrubbing) ? scrubtime_stampLocation : time_stamp;
     
     return (
       <div>
-        <CurrentTime elapsed={timelineTimestamp} />
+        <CurrentTime elapsed={timelinetime_stamp} />
         <Timeline
           length={length}
-          elapsed={timelineTimestamp}
+          elapsed={timelinetime_stamp}
           scrub={scrub}
           startScrubbing={this.startScrubbing}
           endScrubbing={this.endScrubbing}
           scrubTimeline={this.scrubTimeline}
         />
-        <Remaining length={length} elapsed={timelineTimestamp} />
+        <Remaining length={length} elapsed={timelinetime_stamp} />
       </div>
     );
   }
@@ -48,7 +48,7 @@ class Player extends React.Component {
 
 Player.propTypes = {
   length: PropTypes.number.isRequired,
-  timestamp: PropTypes.number.isRequired,
+  time_stamp: PropTypes.number.isRequired,
   scrub: PropTypes.func.isRequired,
 };
 

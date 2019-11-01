@@ -43,7 +43,7 @@ function InfoBar({ playerSong, like }) {
           {playerSong.title}
         </div>
       </div>
-      <MetaData songId={playerSong.songId} isLiked={playerSong.isliked} like={like} />
+      <MetaData song_id={playerSong.song_id} is_liked={playerSong.is_liked} like={like} />
     </div>
   );
 }
@@ -54,8 +54,8 @@ InfoBar.propTypes = {
     thumbnail: PropTypes.string.isRequired,
     artist: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    isliked: PropTypes.number.isRequired,
-    songId: PropTypes.number.isRequired,
+    is_liked: PropTypes.number.isRequired,
+    song_id: PropTypes.number.isRequired,
   }).isRequired,
   like: PropTypes.func.isRequired,
 };

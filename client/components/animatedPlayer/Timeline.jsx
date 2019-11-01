@@ -8,8 +8,8 @@ class Timeline extends React.Component {
     this.state = { progressDotStyles: {} };
     this.showProgressDot = this.showProgressDot.bind(this);
     this.hideProgressDot = this.hideProgressDot.bind(this);
-    this.getTimestamp = this.getTimestamp.bind(this);
-    this.updateTimestamp = this.updateTimestamp.bind(this);
+    this.gettime_stamp = this.gettime_stamp.bind(this);
+    this.updatetime_stamp = this.updatetime_stamp.bind(this);
     this.handleScrub = this.handleScrub.bind(this);
   }
 
@@ -23,7 +23,7 @@ class Timeline extends React.Component {
     this.setState({ progressDotStyles: { visibility: 'hidden' } });
   }
 
-  getTimestamp(e) {
+  gettime_stamp(e) {
     const { length } = this.props;
     const boundingRectangle = document.getElementsByClassName(styles.timelineContainer)[0].getBoundingClientRect();
     const leftTlineBound = boundingRectangle.left;
@@ -37,23 +37,23 @@ class Timeline extends React.Component {
     // To get the scrubLocation: Subtract the left bound from the click location
     // To get the totalWidth: Subtract the left bound from the right bound
     // Divide scrubLocation by totalWidth to geth the ratio of the total
-    let newTimestamp = (clickLocation - leftTlineBound) / (rightTlineBound - leftTlineBound);
-    // Multiply by the song length to get the new timestamp
-    newTimestamp *= length;
-    return newTimestamp
+    let newtime_stamp = (clickLocation - leftTlineBound) / (rightTlineBound - leftTlineBound);
+    // Multiply by the song length to get the new time_stamp
+    newtime_stamp *= length;
+    return newtime_stamp
   }
   
-  updateTimestamp(e) {
+  updatetime_stamp(e) {
     const { scrub } = this.props;
-    const newTimestamp = this.getTimestamp(e)
-    scrub(newTimestamp);
+    const newtime_stamp = this.gettime_stamp(e)
+    scrub(newtime_stamp);
     // this.showProgressDot();
   }
 
   handleScrub(e) {
     const { scrubTimeline } = this.props;
-    const scrubLocationTimestamp = this.getTimestamp(e);
-    scrubTimeline(scrubLocationTimestamp);
+    const scrubLocationtime_stamp = this.gettime_stamp(e);
+    scrubTimeline(scrubLocationtime_stamp);
   }
 
   render() {
@@ -74,8 +74,8 @@ class Timeline extends React.Component {
         onMouseUp={endScrubbing}
         onMouseOver={this.handleScrub}
         onMouseLeave={this.hideProgressDot}
-        onClick={this.updateTimestamp}
-        // onKeyDown={this.updateTimestamp}
+        onClick={this.updatetime_stamp}
+        // onKeyDown={this.updatetime_stamp}
         role="button"
         tabIndex="-1"
         aria-label="song progress bar"

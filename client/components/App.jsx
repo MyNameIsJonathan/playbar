@@ -16,8 +16,8 @@ class App extends React.Component {
       songs: [],
       upNext: [],
       previousPlays: [],
-      songFile: null,
-      timestamp: 0,
+      song_file: null,
+      time_stamp: 0,
       repeat: '',
       shuffle: '',
       volume: .7
@@ -36,25 +36,25 @@ class App extends React.Component {
   componentDidMount() { this.mount() }
 
   render() {
-    const { songs, upNext, songFile, timestamp, repeat, shuffle } = this.state;
+    const { songs, upNext, song_file, time_stamp, repeat, shuffle } = this.state;
     // className={styles.test}
     return (
       <footer className={styles.footer}> 
         <div className={styles.container}>
           <Button className="back" clickHandler={this.back} />
-          {songFile && songFile.paused ? (
-            <Play playSong={() => this.togglePlay(songFile)} />
+          {song_file && song_file.paused ? (
+            <Play playSong={() => this.togglePlay(song_file)} />
           ) : (
-            <Pause pauseSong={() => this.togglePlay(songFile)} />
+            <Pause pauseSong={() => this.togglePlay(song_file)} />
           )}
           <Button className="next" clickHandler={this.next} />
           <Button className={`shuffle${shuffle}`} clickHandler={this.shuffle} />
           <Button className={`repeat${repeat}`} clickHandler={this.repeat} />
           <div className={styles.player}>
-            {songFile
-              && <Player length={upNext[0].length} timestamp={timestamp} scrub={this.scrub} />}
+            {song_file
+              && <Player length={upNext[0].length} time_stamp={time_stamp} scrub={this.scrub} />}
           </div>
-          {songFile && <Volume songFile={songFile} />}
+          {song_file && <Volume song_file={song_file} />}
           <div className={styles.infoBar}>
             {upNext[0]
               && <InfoBar playerSong={upNext[0]} like={this.like} />}

@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../cssModules/infobar.css';
 
-function Like({ songId, isLiked, like }) {
+function Like({ song_id, is_liked, like }) {
   const click = () => {
-    like(songId, isLiked);
+    like(song_id, is_liked);
   };
 
   return (
     <div
-      className={isLiked ? styles.liked : styles.like}
+      className={is_liked ? styles.liked : styles.like}
       onClick={click}
       onKeyDown={click}
       role="button"
@@ -20,8 +20,8 @@ function Like({ songId, isLiked, like }) {
 }
 
 Like.propTypes = {
-  songId: PropTypes.number.isRequired,
-  isLiked: PropTypes.number.isRequired,
+  song_id: PropTypes.number.isRequired,
+  is_liked: PropTypes.number.isRequired,
   like: PropTypes.func.isRequired,
 };
 

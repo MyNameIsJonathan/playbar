@@ -1,37 +1,27 @@
-DROP DATABASE IF EXISTS soundCloutPlayer;
+DROP DATABASE IF EXISTS playbar;
 
-CREATE DATABASE soundCloutPlayer;
+CREATE DATABASE playbar;
 
-USE soundCloutPlayer;
+USE playbar;
 
-CREATE TABLE songs (
-  id INT NOT NULL AUTO_INCREMENT,
-  songId INT NOT NULL,
+CREATE TABLE songs
+(
+  id INT NOT NULL
+  AUTO_INCREMENT,
+  song_id INT NOT NULL,
   length INT NOT NULL,
-  timestamp INT DEFAULT 0,
-  isliked TINYINT DEFAULT 0,
-  songFile VARCHAR(150),
-  title VARCHAR(150),
-  artist VARCHAR(60),
-  album VARCHAR(60),
-  thumbnail VARCHAR(150),
-  PRIMARY KEY (id)
-);
-
-CREATE TABLE upNext (
-  position INT AUTO_INCREMENT,
-  songId INT,
-  FOREIGN KEY (songId) 
-    REFERENCES songs(id)
-    ON UPDATE CASCADE,
-  UNIQUE KEY (position)
-);
-
-CREATE TABLE previousPlays (
-  position INT AUTO_INCREMENT,
-  songId INT,
-  FOREIGN KEY (songId) 
-    REFERENCES songs(id)
-    ON UPDATE CASCADE,
-  UNIQUE KEY (position)
+  time_stamp INT DEFAULT 0,
+  is_liked TINYINT DEFAULT 0,
+  song_file VARCHAR
+  (150),
+  title VARCHAR
+  (150),
+  artist VARCHAR
+  (60),
+  album VARCHAR
+  (60),
+  thumbnail VARCHAR
+  (150),
+  PRIMARY KEY
+  (id)
 );

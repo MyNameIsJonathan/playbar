@@ -23,3 +23,11 @@ CREATE TABLE likes (
     REFERENCES songs(songId)
   PRIMARY KEY (id)
 )
+
+CREATE TABLE playHistory (
+  id INT AUTO_INCREMENT,
+  songId INT,
+  userId INT,
+  FOREIGN KEY (songId)
+    REFERENCES songs(songId)
+)

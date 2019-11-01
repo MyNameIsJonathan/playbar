@@ -1,6 +1,6 @@
 # AirCloudy Play Bar Module
 
-A fixed-position song playback center
+A fixed-position song playback center.
 
 ## Server Routes
 
@@ -47,14 +47,14 @@ Update a song record in the database. Data should be sent as a JSON object in th
 | `length`       | `integer` | _Optional_. Song length in seconds.              |
 | `isLiked`      | `integer` | _Optional_. Boolean integer of if song is liked. |
 | `songDataURL`  | `string`  | _Optional_. URL of the song audio file.          |
-| `songName`     | `string`  | _Optional_. Name of the song.                    |
+| `songName`     | `string`  | _Optional_. Song name.                           |
 | `artist`       | `string`  | _Optional_. Astist name.                         |
-| `album`        | `string`  | _Optional_. Identifier for the song album.       |
+| `album`        | `string`  | _Optional_. Album name.                          |
 | `thumbnailURL` | `string`  | _Optional_. URL of the song art file.            |
 
 ### DELETE /songs/:songId
 
-Removes a song record from the database, and removes any comment records related to the song.
+Removes a song record from the database, and removes any "like" records related to the song.
 
 **Parameters**
 
@@ -64,7 +64,7 @@ Removes a song record from the database, and removes any comment records related
 
 ### GET /likes/:songId/:userId
 
-Get current user's like status for a song. Returns true if user has liked song, else false
+Get current user's like status for a song. Returns true if user has liked song, else false.
 
 **Parameters**
 
@@ -81,7 +81,7 @@ Get current user's like status for a song. Returns true if user has liked song, 
 
 ### PUT /likes/
 
-Update like for a song. Song data is sent as an object in the request body. The response is a boolean true/false.
+Update like for a song. Song data is sent as an object in the request body.
 
 **Parameters**
 

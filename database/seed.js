@@ -8,13 +8,13 @@ const seedData = () => {
     const randomSong = {
       songId: Math.floor(Math.random() * 2000),
       length: 183,
-      timestamp: 0,
-      isliked: Math.floor(Math.random() * 2),
-      songFile: 'Shelter.mp3',
+      time_stamp: 0,
+      is_liked: Math.floor(Math.random() * 2),
+      songDataURL: 'Shelter.mp3',
       title: faker.random.words(),
       artist: faker.name.findName(),
       album: faker.commerce.productName(),
-      thumbnail: faker.image.imageUrl(),
+      thumbnailURL: faker.image.imageUrl(),
     };
     // const sampleSong = exampleSongs[i] || randomSong;
     schema

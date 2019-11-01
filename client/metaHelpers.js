@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import axios from 'axios';
 
 const metaHelpers = {
@@ -11,39 +12,39 @@ const metaHelpers = {
         // 2) Splice out first song and push to upNext playlist
         const upNext = [];
         upNext.push(songs.shift());
-        // 3) When setting state, make a songFile out of upNext[0]
-        // 4) Set state: songs, upNext, songFile
-        return this.setState({
+        // 3) When setting state, make a songDataURL out of upNext[0]
+        // 4) Set state: songs, upNext, songDataURL
+        this.setState({
           songs,
           upNext,
-          songFile: new Audio(upNext[0].songFile),
+          songDataURL: new Audio(upNext[0].songDataURL),
         });
       })
       .catch((err) => console.log('mount err: ', err));
   },
-  tick(songfile) {
-    const {songs, upNext, repeat, songFile} = this.state;
+  tick(songDataURL) {
+    const {songs, upNext, repeat, songDataURL} = this.state;
     // If the song has ended
     //   1) clear the interval,
     //   2) repeat song if necessary,
     //   3) call next if possible,
     //   4) if repeating all AND at the end, restart with previousPlays
-    const isEnded = songFile.ended;
+    const isEnded = songDataURL.ended;
     if (isEnded) {
-      clearInterval(this.timestampID);
+      clearInterval(this.time_stampID);
       if (repeat === 'Song') {
-        songFile.currentTime = 0;
-        this.setState({timestamp: 0});
+        songDataURL.currentTime = 0;
+        this.setState({time_stamp: 0});
       } else if (songs.length > 0 || upNext.length > 0) {
         this.next();
       } else if (repeat === 'List') {
-        // mount makes a request for the songList, and resets state for songs, upNext, and songFile
+        // mount makes a request for the songList, and resets state for songs, upNext, and songDataURL
         this.mount();
       }
     } else {
       // Tick is called each second when playing,
       //   storing the currentTime property from the Audio element
-      this.setState({timestamp: songFile.currentTime});
+      this.setState({time_stamp: songDataURL.currentTime});
     }
   },
   shuffle() {
@@ -70,29 +71,19 @@ const metaHelpers = {
     }
     this.setState({repeat: newStatus});
   },
-  like(songId, isLiked) {
+  like(songId, is_liked) {
     const {upNext} = this.state;
-    //  Post to the "http://localhost/like:songId" route to toggle like status
+    //  Post to the "http://localhost:3000/likes:songId" route to toggle like status
     axios
-      .post(`http://localhost/like/${songId}`, {isliked: isLiked})
-      .then(() => axios.get('/songs'))
-      .then((results) => {
-        const songs = results.data;
-        // if songId is current player song, toggle isliked to re-render "like" status
-        if (songId === upNext[0].songId) {
-          const likeStatus = upNext[0].isliked;
-          upNext[0].isliked = likeStatus ? 0 : 1;
-        }
-        return this.setState({upNext, songs: results.data});
+      .post(`http://localhost:3000/likes/${songId}`, {is_liked: is_liked})
+      .then(() => {
+        this.setState((state) => {
+          state.upNext[0].is_liked = state.upNext[0].is_liked ? 0 : 1;
+          return {upNext};
+        });
       })
       .catch((err) => console.log('like err', err));
   },
-  //  *IF TIME REFACTOR:
-  //  *Get nextUp songIds, use Promise.each to:
-  //    *use '/songs/:id' to get the song obj
-  //    *then push result to upNext arr
-  //    *When all promises complete: setState with upNext
-  //  *Do the same for previousPlays^
 };
 
 export default metaHelpers;

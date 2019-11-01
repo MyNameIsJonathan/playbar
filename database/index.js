@@ -6,7 +6,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: process.env.HR_SYSTEM_DESIGN_MYSQL_PASSWORD,
-  database: 'soundCloutPlayer',
+  database: 'playbar',
 });
 
 Promise.promisifyAll(db);

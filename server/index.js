@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-var cors = require('cors')
+const cors = require('cors');
 const cb = require('./routeCallbacks');
 
 const app = express();
@@ -9,22 +9,23 @@ const port = 3000;
 
 const jsonParser = bodyParser.json();
 
-// var corsOptions = {
-//     origin: true,
-//     methods:['GET', 'POST'],
-//     // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-//   }
-
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/songs/:id', cb.getSong);
+// GET SONG
+app.get('/songs/:songId/:userId', cb.getSong); // TODO carry userId through functionality to return if current user likes current song
 
-app.get('/:playlist', cb.getPlaylist);
+// CREATE SONG
+app.post('/songs', cb.postSong);
 
-app.post('/like/:songId', jsonParser, cb.likeEntry);
+// PUT SONG
+app.put('/songs', cb.putSong);
 
-app.post('/playlist/:playlist', jsonParser, cb.playlistEntry);
+// DELETE SONG
+app.delete('/songs/:songId', cb.deleteSong);
+
+// Update like status
+app.post('/likes', jsonParser, cb.likeEntry);
 
 app.listen(port);

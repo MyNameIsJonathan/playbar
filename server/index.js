@@ -25,7 +25,7 @@ app.get('/:playlist', cb.getPlaylist);
 app.post('/playlist/:playlist', jsonParser, cb.playlistEntry);
 
 // Update like status
-app.post('/like/:song_id', jsonParser, cb.likeEntry);
+app.post('/likes/:song_id', jsonParser, cb.likeEntry);
 
 // CREATE SONG
 app.post('/songs/:song_name', cb.postSong);

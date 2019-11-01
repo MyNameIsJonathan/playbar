@@ -5,10 +5,17 @@ CREATE TABLE songs (
    length int,
    time_stamp int,
    is_liked int,
-   song_file text,
+   song_data_url text,
    song_name text,
    artist text,
    album text,
-   thumbnail text,
+   thumbnail_url text,
    PRIMARY KEY (song_id)
+);
+
+CREATE TABLE likes (
+   id int,
+   song_id int,
+   user_id int,
+   PRIMARY KEY (id)
 );

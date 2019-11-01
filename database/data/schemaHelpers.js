@@ -3,7 +3,7 @@ const db = require('../index');
 
 module.exports = Promise.promisifyAll({
   songSaver: (song, cb) => {
-    const stmt = `INSERT INTO songs (song_id, length, time_stamp, is_liked, song_file, title, artist, album, thumbnail) 
+    const stmt = `INSERT INTO songs (song_id, length, time_stamp, is_liked, song_data_url, title, artist, album, thumbnail_url) 
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
               `;
     const songVals = [
@@ -11,11 +11,11 @@ module.exports = Promise.promisifyAll({
       song.length,
       song.time_stamp,
       song.is_liked,
-      song.song_file,
+      song.song_data_url,
       song.title,
       song.artist,
       song.album,
-      song.thumbnail,
+      song.thumbnail_url,
     ];
     db.queryAsync(stmt, songVals)
       .then((results) => cb(null, results))

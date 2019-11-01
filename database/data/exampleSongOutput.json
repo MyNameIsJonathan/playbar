@@ -5,11 +5,11 @@
     "length": 183,
     "time_stamp": 2,
     "is_liked": 0,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Armenian Dram Administrator card",
     "artist": "Giovani Deckow",
     "album": "Ergonomic Metal Salad",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 2,
@@ -17,11 +17,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "interface",
     "artist": "Lyric Mohr II",
     "album": "Generic Plastic Table",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 3,
@@ -29,11 +29,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Liaison Utah",
     "artist": "Helga Wehner",
     "album": "Tasty Fresh Car",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 4,
@@ -41,11 +41,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Facilitator",
     "artist": "Hiram Nitzsche",
     "album": "Rustic Fresh Sausages",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 5,
@@ -53,11 +53,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Suriname client-server",
     "artist": "Hilton Koelpin",
     "album": "Practical Metal Chicken",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 6,
@@ -65,11 +65,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Decentralized virtual",
     "artist": "Keven Dickinson",
     "album": "Fantastic Fresh Computer",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 7,
@@ -77,11 +77,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Oklahoma input",
     "artist": "Jett Schuppe",
     "album": "Intelligent Wooden Bacon",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 8,
@@ -89,11 +89,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Berkshire",
     "artist": "Kaya Marvin III",
     "album": "Refined Wooden Sausages",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 9,
@@ -101,11 +101,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "Colorado",
     "artist": "Camilla Rohan",
     "album": "Incredible Frozen Mouse",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 10,
@@ -113,11 +113,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "mesh",
     "artist": "Madie Haag",
     "album": "Unbranded Concrete Ball",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 11,
@@ -125,11 +125,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "uniform circuit",
     "artist": "Jaquan Reichel",
     "album": "Incredible Rubber Soap",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 12,
@@ -137,11 +137,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "SAS Hawaii",
     "artist": "Mossie Bartell",
     "album": "Handcrafted Rubber Fish",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 13,
@@ -149,11 +149,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 0,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "out-of-the-box orchestrate Guarani",
     "artist": "Mr. Peter Greenholt",
     "album": "Refined Wooden Table",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 14,
@@ -161,11 +161,11 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "deposit Integration",
     "artist": "Miss Zita Dickens",
     "album": "Practical Steel Chair",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   },
   {
     "id": 15,
@@ -173,10 +173,10 @@
     "length": 183,
     "time_stamp": 0,
     "is_liked": 1,
-    "song_file": "Shelter.mp3",
+    "song_data_url": "Shelter.mp3",
     "title": "SDD",
     "artist": "Emmanuelle Swift",
     "album": "Sleek Plastic Bacon",
-    "thumbnail": "http://lorempixel.com/640/480"
+    "thumbnail_url": "http://lorempixel.com/640/480"
   }
 ]

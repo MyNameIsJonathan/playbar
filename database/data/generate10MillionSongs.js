@@ -15,11 +15,11 @@ const seedData = () => {
       length,
       time_stamp: Math.floor(Math.random() * length),
       is_liked: Math.floor(Math.random() * 2),
-      song_file: 'Shelter.mp3',
+      song_data_url: 'Shelter.mp3',
       title: faker.random.words(),
       artist: faker.name.findName(),
       album: faker.commerce.productName(),
-      thumbnail: faker.image.imageUrl(),
+      thumbnail_url: faker.image.imageUrl(),
     };
   }
 };

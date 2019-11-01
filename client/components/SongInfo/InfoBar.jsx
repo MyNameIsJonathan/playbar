@@ -19,7 +19,7 @@ function InfoBar({ playerSong, like }) {
         tabIndex="-1"
         aria-label="album"
       >
-        <img className={styles.albumThumbnail} alt="album artwork" src={playerSong.thumbnail} />
+        <img className={styles.albumThumbnail} alt="album artwork" src={playerSong.thumbnail_url} />
       </div>
       <div className={styles.infoGrid}>
         <div
@@ -51,7 +51,7 @@ function InfoBar({ playerSong, like }) {
 InfoBar.propTypes = {
   playerSong: PropTypes.shape({
     album: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
+    thumbnail_url: PropTypes.string.isRequired,
     artist: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     is_liked: PropTypes.number.isRequired,

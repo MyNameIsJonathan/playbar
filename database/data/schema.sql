@@ -12,7 +12,7 @@ CREATE TABLE songs
   length INT NOT NULL,
   time_stamp INT DEFAULT 0,
   is_liked TINYINT DEFAULT 0,
-  song_file VARCHAR
+  song_data_url VARCHAR
   (150),
   title VARCHAR
   (150),
@@ -20,7 +20,7 @@ CREATE TABLE songs
   (60),
   album VARCHAR
   (60),
-  thumbnail VARCHAR
+  thumbnail_url VARCHAR
   (150),
   PRIMARY KEY
   (id)

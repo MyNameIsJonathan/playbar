@@ -22,7 +22,7 @@ Get a specific song by song_id. The response returns a JSON object of song data.
 | `album` | `string` | _Required_. Identifier for the song album. |
 | `thumbnail_url` | `string` | _Required_. URL of the song art file. |
 
-### POST /songs
+### POST /songs/
 
 Insert a new song record into the database. Data should be sent as a JSON object in the body of the request.
 
@@ -40,7 +40,7 @@ Insert a new song record into the database. Data should be sent as a JSON object
 | `album` | `string` | _Required_. Identifier for the song album. |
 | `thumbnail_url` | `string` | _Required_. URL of the song art file. |
 
-### PUT /songs/:songid
+### PUT /songs/
 
 Update a song record in the database. Data should be sent as a JSON object in the body of the request.
 
@@ -58,9 +58,9 @@ Update a song record in the database. Data should be sent as a JSON object in th
 | `album` | `string` | _Required_. Identifier for the song album. |
 | `thumbnail_url` | `string` | _Required_. URL of the song art file. |
 
-### DELETE /songs/:songid
+### DELETE /songs/
 
-Removes a song record from the database, and removes any comment records related to the song.
+Removes a song record from the database, and removes any comment records related to the song. Song data is sent as an object in the body.
 
 ### GET /likes/:song_id/:user_id
 
@@ -73,9 +73,9 @@ Update like for a song. The response returns a SUCCESS/FAILURE string.
 | `song_id` | `integer` | _Required_. Identifier for the song. |
 | `user_id` | `integer` | _Required_. Identifier for the user liking the song. |
 
-### PUT /likes/:song_id/:user_id
+### PUT /likes/
 
-Update like for a song. The response is a boolean true/false.
+Update like for a song. Song data is sent as an object in the request body. The response is a boolean true/false.
 
 **Parameters**
 

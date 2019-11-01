@@ -2,13 +2,83 @@
 
 A fixed-position song playback center
 
-## Related Projects
+## Server Routes
 
-## Table of Contents
+### GET /songs/:songid
 
-## Usage
+Get a specific song by song_id. The response returns a JSON object of song data.
 
-## Requirements
+**Response**
+
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| `song_id` | `integer` | _Required_. Identifier for the song. |
+| `length` | `integer` | _Required_. Song length in seconds. |
+| `time_stamp` | `integer` | _Required_. Song timestamp. |
+| `is_liked` | `integer` | _Required_. Boolean integer of if song is liked. |
+| `song_data_url` | `string` | _Required_. URL of the song audio file. |
+| `title` | `string` | _Required_. Name of the song. |
+| `artist` | `string` | _Required_. Astist name. |
+| `album` | `string` | _Required_. Identifier for the song album. |
+| `thumbnail_url` | `string` | _Required_. URL of the song art file. |
+
+### POST /songs
+
+Insert a new song record into the database. Data should be sent as a JSON object in the body of the request.
+
+**Body**
+
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| `song_id` | `integer` | _Required_. Identifier for the song. |
+| `length` | `integer` | _Required_. Song length in seconds. |
+| `time_stamp` | `integer` | _Required_. Song timestamp. |
+| `is_liked` | `integer` | _Required_. Boolean integer of if song is liked. |
+| `song_data_url` | `string` | _Required_. URL of the song audio file. |
+| `title` | `string` | _Required_. Name of the song. |
+| `artist` | `string` | _Required_. Astist name. |
+| `album` | `string` | _Required_. Identifier for the song album. |
+| `thumbnail_url` | `string` | _Required_. URL of the song art file. |
+
+### PUT /songs/:songid
+
+Update a song record in the database. Data should be sent as a JSON object in the body of the request.
+
+**Body**
+
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| `song_id` | `integer` | _Required_. Identifier for the song. |
+| `length` | `integer` | _Required_. Song length in seconds. |
+| `time_stamp` | `integer` | _Required_. Song timestamp. |
+| `is_liked` | `integer` | _Required_. Boolean integer of if song is liked. |
+| `song_data_url` | `string` | _Required_. URL of the song audio file. |
+| `title` | `string` | _Required_. Name of the song. |
+| `artist` | `string` | _Required_. Astist name. |
+| `album` | `string` | _Required_. Identifier for the song album. |
+| `thumbnail_url` | `string` | _Required_. URL of the song art file. |
+
+### DELETE /songs/:songid
+
+Removes a song record from the database, and removes any comment records related to the song.
+
+### POST /likes/
+
+Get comments for a song. The response returns a JSON array of objects.
+
+**Parameters**
+
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| `song_id` | `integer` | _Required_. Identifier for the song. |
+| `user_id` | `integer` | _Required_. Identifier for the user liking the song. |
+
+**Response**
+
+| Text |
+| ---- |
+| SUCCESS |
+
 
 ## Installing Dependencies
 

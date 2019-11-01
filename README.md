@@ -64,7 +64,7 @@ Removes a song record from the database, and removes any comment records related
 
 ### GET /likes/:song_id/:user_id
 
-Update like for a song. The response returns a SUCCESS/FAILURE string.
+Get likes for a song. The response returns a SUCCESS/FAILURE string.
 
 **Parameters**
 

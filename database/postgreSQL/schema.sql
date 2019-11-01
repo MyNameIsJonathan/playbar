@@ -5,8 +5,7 @@ CREATE DATABASE playbar;
 USE playbar;
 
 CREATE TABLE songs (
-  songId BIGSERIAL,
-  length INT NOT NULL,
+  songId INT AUTO_INCREMENT,
   likeCount INT DEFAULT 0,
   songDataURL VARCHAR (150),
   songName VARCHAR (30),
@@ -17,8 +16,10 @@ CREATE TABLE songs (
 );
 
 CREATE TABLE likes (
+  id INT AUTO_INCREMENT,
   songId INT,
   userName INT,
   FOREIGN KEY (songId)
     REFERENCES songs(songId)
+  PRIMARY KEY (id)
 )

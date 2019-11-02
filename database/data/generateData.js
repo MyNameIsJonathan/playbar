@@ -2,12 +2,9 @@ const faker = require('faker');
 const fs = require('fs');
 
 // Save data as both csv and json
-const songsCSV =
-  '/Users/jonathanolson/HackReactor/SDC/playbar/database/data/songs.csv';
-const likesCSV =
-  '/Users/jonathanolson/HackReactor/SDC/playbar/database/data/likes.csv';
-const playHistoryCSV =
-  '/Users/jonathanolson/HackReactor/SDC/playbar/database/data/playHistory.csv';
+const songsCSV = './songs.csv';
+const likesCSV = './likes.csv';
+const playHistoryCSV = './playHistory.csv';
 
 // Generate list of 1000 users
 const users = [];
@@ -85,35 +82,9 @@ const generateAndSaveData = () => {
   //     }
   //   });
   // }
-
-  // GENERATE AND SAVE LIKE EXAMPLES
-  for (let i = 0; i < 50000000; i += 1) {
-    // get a song id < 10,000,000
-    const songId = faker.random.number({
-      min: 0,
-      max: 9999999,
-    });
-    // get a username
-    const userName =
-      users[
-        faker.random.number({
-          min: 0,
-          max: 999,
-        })
-      ];
-    // Create like entry
-    const likeEntry = [songId, userName, '\r'];
-    // write like array to file
-    fs.appendFileSync(likesCSV, likeEntry, (err) => {
-      if (err) {
-        console.log(err);
-      }
-    });
-  }
-
-  // GENERATE AND SAVE PLAY HISTORY EXAMPLES
-  // for (let i = 0; i < 10000; i += 1) {
-  //   // get a song id
+  // // GENERATE AND SAVE LIKE EXAMPLES
+  // for (let i = 0; i < 50000000; i += 1) {
+  //   // get a song id < 10,000,000
   //   const songId = faker.random.number({
   //     min: 0,
   //     max: 9999999,
@@ -126,15 +97,39 @@ const generateAndSaveData = () => {
   //         max: 999,
   //       })
   //     ];
-  //   // Create history entry
-  //   const historyEntry = [songId, userName, '\r'];
-  //   // write history array to file
-  //   fs.appendFileSync(playHistoryCSV, historyEntry, (err) => {
+  //   // Create like entry
+  //   const likeEntry = [songId, userName, '\r'];
+  //   // write like array to file
+  //   fs.appendFileSync(likesCSV, likeEntry, (err) => {
   //     if (err) {
   //       console.log(err);
   //     }
   //   });
   // }
+  // GENERATE AND SAVE PLAY HISTORY EXAMPLES
+  for (let i = 0; i < 10000; i += 1) {
+    // get a song id
+    const songId = faker.random.number({
+      min: 0,
+      max: 9999999,
+    });
+    // get a username
+    const userName =
+      users[
+        faker.random.number({
+          min: 0,
+          max: 999,
+        })
+      ];
+    // Create history entry
+    const historyEntry = [songId, userName, '\r'];
+    // write history array to file
+    fs.appendFileSync(playHistoryCSV, historyEntry, (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
+  }
 };
 
 writeHeaders();

@@ -58,36 +58,36 @@ const writeHeaders = () => {
 
 const generateAndSaveData = () => {
   // GENERATE AND SAVE SONG EXAMPLES
-  for (let i = 0; i < 100; i += 1) {
-    // get a username
-    const userName =
-      users[
-        faker.random.number({
-          min: 0,
-          max: 999,
-        })
-      ];
-    // Create song; songId = i
-    const song = [
-      i, // song id
-      faker.random.number(), // like count
-      faker.image.imageUrl(), // song data URL
-      faker.random.words(), // song name
-      faker.internet.userName(), // artist
-      faker.random.word(), // album
-      faker.image.imageUrl(), // thumbnail url
-      '\r',
-    ];
-    // write song array to file
-    fs.appendFileSync(songsCSV, song, (err) => {
-      if (err) {
-        console.log(err);
-      }
-    });
-  }
+  // for (let i = 0; i < 10000000; i += 1) {
+  //   // get a username
+  //   const userName =
+  //     users[
+  //       faker.random.number({
+  //         min: 0,
+  //         max: 999,
+  //       })
+  //     ];
+  //   // Create song; songId = i
+  //   const song = [
+  //     i, // song id
+  //     faker.random.number(), // like count
+  //     faker.image.imageUrl(), // song data URL
+  //     faker.random.words(), // song name
+  //     faker.internet.userName(), // artist
+  //     faker.random.word(), // album
+  //     faker.image.imageUrl(), // thumbnail url
+  //     '\r',
+  //   ];
+  //   // write song array to file
+  //   fs.appendFileSync(songsCSV, song, (err) => {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //   });
+  // }
 
   // GENERATE AND SAVE LIKE EXAMPLES
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 50000000; i += 1) {
     // get a song id < 10,000,000
     const songId = faker.random.number({
       min: 0,
@@ -112,30 +112,35 @@ const generateAndSaveData = () => {
   }
 
   // GENERATE AND SAVE PLAY HISTORY EXAMPLES
-  for (let i = 0; i < 100; i += 1) {
-    // get a song id
-    const songId = faker.random.number({
-      min: 0,
-      max: 9999999,
-    });
-    // get a username
-    const userName =
-      users[
-        faker.random.number({
-          min: 0,
-          max: 999,
-        })
-      ];
-    // Create history entry
-    const historyEntry = [songId, userName, '\r'];
-    // write history array to file
-    fs.appendFileSync(playHistoryCSV, historyEntry, (err) => {
-      if (err) {
-        console.log(err);
-      }
-    });
-  }
+  // for (let i = 0; i < 10000; i += 1) {
+  //   // get a song id
+  //   const songId = faker.random.number({
+  //     min: 0,
+  //     max: 9999999,
+  //   });
+  //   // get a username
+  //   const userName =
+  //     users[
+  //       faker.random.number({
+  //         min: 0,
+  //         max: 999,
+  //       })
+  //     ];
+  //   // Create history entry
+  //   const historyEntry = [songId, userName, '\r'];
+  //   // write history array to file
+  //   fs.appendFileSync(playHistoryCSV, historyEntry, (err) => {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //   });
+  // }
 };
 
 writeHeaders();
+
+const start = Date.now();
 generateAndSaveData();
+const end = Date.now();
+
+console.log('total time:', end - start);

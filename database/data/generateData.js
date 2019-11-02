@@ -64,7 +64,7 @@ const writeHeader = (filename) => {
 const generateAndSaveData = () => {
   // GENERATE AND SAVE SONG EXAMPLES
   writeHeader('songs');
-  for (let i = 1; i <= 10000000; i += 1) {
+  for (let i = 1; i <= 1000; i += 1) {
     // get a username
     const userName =
       users[
